@@ -24,9 +24,10 @@
             </button>
           </div>
 
-          <form class="form-create" id="newTodoForm">
+          <form class="" id="form-create">
             <input
               class="create-todo-input"
+              id="form-input"
               type="text"
               name="newTodo"
               placeholder="Create a new todo…"
@@ -44,7 +45,19 @@
       </div>
     </section>
 
-    <section class="section-todos">
+    <section class="container">
+      <div class="todos todo-wrapper" id="list-group-todo">
+        <div class="list-item">
+          <label for="inn">
+            <p></p>
+            <input type="checkbox" name="inn" id="inn" />
+          </label>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- <section class="section-todos">
       <div class="todos todo-wrapper container">
         <ul class="todo-list" id="list-group-todo"></ul>
         <div class="todo-list-bottom-wrapper">
@@ -57,7 +70,7 @@
           <span class="todo-list-bottom-end">Clear completed</span>
         </div>
       </div>
-    </section>
+    </section> -->
     <script type="module" src="js/index.js"></script>
   </body>
 </html>

@@ -175,6 +175,7 @@ img {
   border-radius: 5px 5px 0 0;
   background-color: var(--white);
   height: 300px;
+  overflow-y: scroll;
 }
 .todo-list {
   list-style: none;
@@ -192,6 +193,47 @@ img {
   width: 100%;
   border-bottom: 2px solid var(--lavender-gray);
   display: flex;
-  justify-content: space-between;
+  gap: 24px;
+  align-items: center;
 }
-.complated{opacity: 50%;}
+.list-item-content {
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+  padding-left: 2.4rem;
+  padding-right: 2.4rem;
+}
+.complated {
+  opacity: 50%;
+  text-decoration: line-through;
+}
+/* Стили для обычного input checkbox */
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Стили для активного input checkbox */
+input[type="checkbox"]:checked {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+input[type="checkbox"]:checked::before {
+  content: "✓";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+}

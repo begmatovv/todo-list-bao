@@ -2,7 +2,7 @@ const theme = document.getElementById("themeToggler");
 const newTodo = document.getElementById("newTodoForm");
 const todo = document.getElementById("todos");
 
-const formCreate = document.getElementById("create-form");
+const formCreate = document.getElementById("form-create");
 const listGroupTodo = document.getElementById("list-group-todo");
 
 // themeTOGLER
@@ -26,17 +26,18 @@ function showTodos() {
   listGroupTodo.innerHTML = "";
   todosList.forEach((item, i) => {
     listGroupTodo.innerHTML += `
-    <li onclick="setCompleted(${i})" class=" ${
-      item.completed == true ? "complated" : ""
-    }">
-    ${item.text}
-    </li> `;
+    <div class="list-item ${item.completed == true ? "complated" : ""}">
+    <label class="list-item-content" for="inn">
+      <input type="checkbox" name="inn" id="inn" />
+      <p>${item.text}</p>
+    </label>
+  </div> `;
   });
 }
 formCreate.addEventListener("submit", (e) => {
   e.preventDefault();
   console.log(e);
-  const todoText = formCreate["create-todo-input"].value.trim();
+  const todoText = formCreate["form-input"].value.trim();
   formCreate.reset();
   if (todoText.length) {
     todosList.push({ text: todoText, completed: false });
